@@ -38,7 +38,7 @@ public class SharePlugin implements MethodChannel.MethodCallHandler {
       case "share":
         expectMapArguments(call);
         // Android does not support showing the share sheet at a particular point on screen.
-        share((String) call.argument("text"));
+        share((String) call.argument("text"), (String) call.argument("subject"));
         result.success(null);
         break;
       case "shareFile":
